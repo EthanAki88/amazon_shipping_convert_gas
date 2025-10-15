@@ -561,27 +561,27 @@ function findMatchingData(buyerName, sagawaData, shoshinData, fukuyamaData) {
     console.log(`検索対象の購入者名: "${buyerName}"`);
     
     // Debug: Show some CSV data
-    // console.log('佐川CSV サンプル（先頭3行）:');
-    // for (let i = 1; i < Math.min(4, sagawaData.length); i++) {
-    //   if (sagawaData[i].length > 16) {
-    //     console.log(`  行 ${i}: H="${sagawaData[i][7]}" | O="${sagawaData[i][14]}" | P="${sagawaData[i][15]}" | Q="${sagawaData[i][16]}"`);
-    //   }
-    // }
+    console.log('佐川CSV サンプル（先頭3行）:');
+    for (let i = 1; i < Math.min(4, sagawaData.length); i++) {
+      if (sagawaData[i].length > 16) {
+        console.log(`  行 ${i}: H="${sagawaData[i][7]}" | O="${sagawaData[i][14]}" | P="${sagawaData[i][15]}" | Q="${sagawaData[i][16]}"`);
+      }
+    }
     
-    // console.log('昭新CSV サンプル（先頭3行）:');
-    // const shoshinStartIndex = getShoshinStartIndex(shoshinData);
-    // for (let i = shoshinStartIndex; i < Math.min(shoshinStartIndex + 3, shoshinData.length); i++) {
-    //   if (shoshinData[i].length > 0) {
-    //     console.log(`  行 ${i}: "${shoshinData[i][0]}"`);
-    //   }
-    // }
+    console.log('昭新CSV サンプル（先頭3行）:');
+    const shoshinStartIndex = getShoshinStartIndex(shoshinData);
+    for (let i = shoshinStartIndex; i < Math.min(shoshinStartIndex + 3, shoshinData.length); i++) {
+      if (shoshinData[i].length > 0) {
+        console.log(`  行 ${i}: "${shoshinData[i][0]}"`);
+      }
+    }
     
-    // console.log('福山CSV サンプル（先頭3行）:');
-    // for (let i = 1; i < Math.min(4, fukuyamaData.length); i++) {
-    //   if (fukuyamaData[i].length > 9) {
-    //     console.log(`  行 ${i}: "${fukuyamaData[i][9]}"`);
-    //   }
-    // }
+    console.log('福山CSV サンプル（先頭3行）:');
+    for (let i = 1; i < Math.min(4, fukuyamaData.length); i++) {
+      if (fukuyamaData[i].length > 9) {
+        console.log(`  行 ${i}: "${fukuyamaData[i][9]}"`);
+      }
+    }
     
     // Search in Sagawa data (check multiple columns for buyer names)
     for (let i = 1; i < sagawaData.length; i++) {
